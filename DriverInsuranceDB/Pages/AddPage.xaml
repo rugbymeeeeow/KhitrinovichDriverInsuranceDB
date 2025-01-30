@@ -1,0 +1,61 @@
+﻿<Page x:Class="DriverInsuranceDB.Pages.AddPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DriverInsuranceDB.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Редактирование данных">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Страховая компания -->
+        <TextBlock Text="Страховая компания:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5" Grid.Row="0" Grid.Column="0"/>
+        <ComboBox x:Name="ComboBoxInsuranceCompany" Grid.Row="0" Grid.Column="1" Margin="5">
+            <ComboBoxItem Content="Инео"/>
+            <ComboBoxItem Content="Росгосстрах"/>
+            <ComboBoxItem Content="АльфаСтрахование"/>
+            <ComboBoxItem Content="Согаз"/>
+            <ComboBoxItem Content="ВТБ Страхование"/>
+        </ComboBox>
+
+        <!-- Номер полиса -->
+        <TextBlock Text="Номер полиса:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="TextBoxPolicyNumber" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <!-- Дата оформления -->
+        <TextBlock Text="Дата оформления:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5" Grid.Row="2" Grid.Column="0"/>
+        <DatePicker x:Name="DatePickerIssueDate" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <!-- Срок действия -->
+        <TextBlock Text="Срок действия:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5" Grid.Row="3" Grid.Column="0"/>
+        <DatePicker x:Name="DatePickerExpirationDate" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <!-- Номер автомобиля -->
+        <TextBlock Text="Номер автомобиля:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="TextBoxCarNumber" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+        <!-- Стоимость -->
+        <TextBlock Text="Стоимость:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5" Grid.Row="5" Grid.Column="0"/>
+        <TextBox x:Name="TextBoxCost" Grid.Row="5" Grid.Column="1" Margin="5"/>
+
+        <!-- Кнопки для сохранения и отмены -->
+        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Сохранить" Click="ButtonSave_Click" Width="100" Margin="5"/>
+            <Button Content="Отмена" Click="ButtonCancel_Click" Width="100" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Page>

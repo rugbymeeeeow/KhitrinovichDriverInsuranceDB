@@ -1,0 +1,32 @@
+﻿<Window x:Class="DriverInsuranceDB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DriverInsuranceDB"
+        mc:Ignorable="d"
+        Title="Основная страница" Height="450" Width="800" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame Source="Pages/AuthPage.xaml" Name="NavigationService" Grid.Row="1" Margin="10,10,10,10" BorderThickness="2"  Navigated="MainFrame_OnNavigated" NavigationUIVisibility="Hidden"/>
+        <Button Name="BackButton" Content="Назад" Margin="10,0,0,0" HorizontalAlignment="Left" Width="79" Height="36" VerticalAlignment="Center" Click="BackButtonClick"></Button>
+        <StatusBar Grid.Row="2" VerticalAlignment="Bottom">
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="DateTimeTextBlock" RenderTransformOrigin="0.5,0.5" Width="111" Height="16" >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-180.149"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
